@@ -1,0 +1,19 @@
+# Chess Dashboard - Règles du projet
+
+## Stack
+- Backend: Node.js + Express
+- Frontend: Vue 3 + Vite + Pinia
+- DB: PostgreSQL
+- Charts: D3.js
+- Chess: chess.js + chessboard.js
+
+## Style de code
+- ES modules (import/export)
+- async/await partout, jamais de callbacks
+- Commentaires en français
+- Variables et fonctions en anglais
+
+## Règles importantes
+- Toujours expliquer ce que tu génères
+- Ne jamais générer plus d'un fichier à la fois sans demander
+- Proposer des alternatives quand c'est pertinent
