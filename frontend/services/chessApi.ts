@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000/api';
+const BASE_URL = 'https://chess-dashboard-d56v.onrender.com';
 
 export const chessApi = {
 
