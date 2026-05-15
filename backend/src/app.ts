@@ -1,5 +1,6 @@
 import express from 'express';
 import { playerController } from './controllers/playerController.js';
+import { statsController } from './controllers/statsController.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 
 const app = express();
@@ -11,6 +12,8 @@ app.get('/health', (req, res) => {
 });
 
 app.get('/api/player/:username', playerController.getProfile);
+
+app.get('/api/player/:username/stats', statsController.getStats);
 
 app.use(errorHandler);
 
