@@ -45,48 +45,92 @@
 
   <style scoped>
   .card {
-    --chess-black: #0d0d0f;
-    --chess-dark: #16161a;
-    --chess-panel: #1e1e24;
-    --chess-white: #f4f0e8;
-    --chess-cream: #c8c2b4;
-    --chess-gold: #c9a227;
-    --chess-gold-soft: rgba(201, 162, 39, 0.15);
-    --chess-gold-glow: rgba(201, 162, 39, 0.35);
+    --license-ink: #0e1420;
+    --license-navy-dark: #121a2e;
+    --license-navy: #1a2744;
+    --license-navy-mid: #243b5c;
+    --license-navy-light: #2e4f78;
+    --license-gold: #d4a84b;
+    --license-gold-light: #f0d078;
+    --license-cream: #f5e6c8;
+    --license-parchment: #e8d5a3;
+    --font-numbers: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
+    position: relative;
     max-width: 720px;
     margin: 0 auto;
-    padding: 1.75rem;
-    background: linear-gradient(145deg, var(--chess-dark) 0%, var(--chess-black) 100%);
-    border: 1px solid var(--chess-gold);
-    border-radius: 16px;
+    padding: 2.65rem 1.35rem 1.25rem;
+    background:
+      linear-gradient(160deg, var(--license-navy-light) 0%, var(--license-navy) 35%, var(--license-navy-dark) 100%);
+    border: 3px solid var(--license-gold);
+    border-radius: 6px;
+    outline: 1px solid var(--license-gold-light);
+    outline-offset: 5px;
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.04) inset,
-      0 24px 48px rgba(0, 0, 0, 0.45),
-      0 0 40px var(--chess-gold-soft);
-    color: var(--chess-white);
+      inset 0 0 80px rgba(0, 0, 0, 0.2),
+      inset 0 2px 0 rgba(255, 255, 255, 0.08),
+      0 24px 64px rgba(0, 0, 0, 0.55),
+      0 0 48px rgba(212, 168, 75, 0.12);
+    color: var(--license-cream);
     font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '♜  OFFICIAL · NON-OFFICIAL CHESS LICENSE  ♜';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.45rem 1rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-align: center;
+    color: var(--license-ink);
+    background: linear-gradient(
+      90deg,
+      #8b6914 0%,
+      var(--license-gold-light) 25%,
+      var(--license-gold) 50%,
+      var(--license-gold-light) 75%,
+      #8b6914 100%
+    );
+    border-bottom: 2px solid var(--license-gold);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .card::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(240, 208, 120, 0.2);
+    border-radius: 2px;
+    pointer-events: none;
   }
 
   .profile {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(201, 162, 39, 0.25);
+    padding: 0.75rem;
+    margin-bottom: 0.85rem;
+    background: rgba(14, 20, 32, 0.45);
+    border: 2px solid rgba(212, 168, 75, 0.45);
+    border-radius: 4px;
   }
 
   .profile img {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
+    width: 88px;
+    height: 100px;
+    border-radius: 4px;
     object-fit: cover;
     flex-shrink: 0;
-    border: 3px solid var(--chess-gold);
+    border: 2px solid var(--license-gold);
     box-shadow:
-      0 0 0 4px var(--chess-gold-soft),
-      0 8px 24px rgba(0, 0, 0, 0.5);
+      0 0 0 3px rgba(14, 20, 32, 0.6),
+      4px 4px 0 rgba(0, 0, 0, 0.3);
   }
 
   .info {
@@ -95,96 +139,118 @@
 
   .info .title {
     display: inline-block;
-    margin-bottom: 0.35rem;
-    padding: 0.15rem 0.55rem;
-    font-size: 0.7rem;
+    margin-bottom: 0.4rem;
+    padding: 0.2rem 0.6rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--chess-black);
-    background: linear-gradient(135deg, var(--chess-gold) 0%, #e8c84a 100%);
-    border-radius: 4px;
+    color: var(--license-ink);
+    background: linear-gradient(135deg, var(--license-gold-light) 0%, var(--license-gold) 100%);
+    border: 1px solid #8b6914;
+    border-radius: 2px;
   }
 
   .info h2 {
-    margin: 0 0 0.25rem;
-    font-size: 1.5rem;
+    margin: 0 0 0.3rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.45rem;
     font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--chess-white);
+    letter-spacing: 0.04em;
+    color: var(--license-cream);
     line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   }
 
   .info p {
     margin: 0.15rem 0;
-    font-size: 0.9rem;
-    color: var(--chess-cream);
+    font-size: 0.88rem;
+    color: rgba(245, 230, 200, 0.75);
   }
 
   .info p:first-of-type {
-    color: var(--chess-gold);
-    font-weight: 500;
+    color: var(--license-gold-light);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .info p:last-child {
+    font-family: var(--font-numbers);
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
   }
 
   .stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 0.55rem;
   }
 
   .format {
-    padding: 1.1rem 1rem;
-    background: var(--chess-panel);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 12px;
+    padding: 0.7rem 0.5rem;
+    background: linear-gradient(180deg, var(--license-parchment) 0%, #dcc99a 100%);
+    border: 2px solid var(--license-gold);
+    border-radius: 3px;
     text-align: center;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
 
   .format:hover {
-    border-color: var(--chess-gold-glow);
-    box-shadow: 0 0 20px var(--chess-gold-soft);
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.4),
+      0 6px 16px rgba(0, 0, 0, 0.25);
   }
 
   .format h3 {
-    margin: 0 0 0.75rem;
-    font-size: 0.72rem;
+    margin: 0 0 0.6rem;
+    padding-bottom: 0.4rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--chess-gold);
+    color: var(--license-navy-dark);
+    border-bottom: 1px solid rgba(36, 59, 92, 0.4);
   }
 
   .format p:nth-of-type(1) {
-    margin: 0 0 0.5rem;
-    font-size: 2rem;
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.03em;
-    color: var(--chess-white);
-    text-shadow: 0 0 24px var(--chess-gold-glow);
+    margin: 0 0 0.35rem;
+    font-family: var(--font-numbers);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--license-ink);
   }
 
   .format p:nth-of-type(2) {
-    margin: 0 0 0.65rem;
+    margin: 0 0 0.55rem;
+    font-family: var(--font-numbers);
     font-size: 0.8rem;
-    color: var(--chess-cream);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: rgba(18, 26, 46, 0.85);
+    letter-spacing: 0.02em;
   }
 
   .record {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.35rem;
     margin: 0;
-    padding-top: 0.65rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 0.55rem;
+    border-top: 1px solid rgba(36, 59, 92, 0.3);
   }
 
   .record__item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.25rem;
     flex: 1;
     min-width: 0;
   }
@@ -193,43 +259,43 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1.35rem;
-    height: 1.35rem;
-    font-size: 0.62rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    font-family: var(--font-numbers);
+    font-size: 0.65rem;
     font-weight: 800;
-    letter-spacing: 0.02em;
-    border-radius: 4px;
+    border-radius: 2px;
     line-height: 1;
+    border: 1px solid rgba(0, 0, 0, 0.15);
   }
 
   .record__value {
-    font-size: 0.82rem;
-    font-weight: 600;
+    font-family: var(--font-numbers);
+    font-size: 0.9rem;
+    font-weight: 700;
     font-variant-numeric: tabular-nums;
-    color: var(--chess-white);
+    letter-spacing: 0.02em;
+    color: var(--license-ink);
   }
 
   .record__item--win .record__badge {
-    color: #0d0d0f;
-    background: linear-gradient(135deg, #7cb87c 0%, #5a9a5a 100%);
-    box-shadow: 0 0 10px rgba(124, 184, 124, 0.25);
+    color: var(--license-cream);
+    background: linear-gradient(135deg, var(--license-navy-light) 0%, var(--license-navy-dark) 100%);
   }
 
   .record__item--loss .record__badge {
-    color: #f4f0e8;
-    background: linear-gradient(135deg, #b85c5c 0%, #8f3f3f 100%);
-    box-shadow: 0 0 10px rgba(184, 92, 92, 0.25);
+    color: var(--license-cream);
+    background: linear-gradient(135deg, #a84848 0%, #6e2828 100%);
   }
 
   .record__item--draw .record__badge {
-    color: var(--chess-black);
-    background: linear-gradient(135deg, var(--chess-cream) 0%, #9a9588 100%);
-    box-shadow: 0 0 10px rgba(200, 194, 180, 0.15);
+    color: var(--license-ink);
+    background: linear-gradient(135deg, #9a9588 0%, #6e6a62 100%);
   }
 
   @media (max-width: 560px) {
     .card {
-      padding: 1.25rem;
+      padding: 2.5rem 1rem 1rem;
     }
 
     .profile {
