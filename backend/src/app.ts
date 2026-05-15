@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: 'https://chess-dashboard-five.vercel.app/api'
+  origin: 'https://chess-dashboard-five.vercel.app'
 }));
 
 app.get('/health', (req, res) => {
