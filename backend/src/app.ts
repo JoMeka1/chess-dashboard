@@ -2,10 +2,16 @@ import express from 'express';
 import { playerController } from './controllers/playerController.js';
 import { statsController } from './controllers/statsController.js';
 import { errorHandler } from './middlewares/errorHandler.js';
+import cors from 'cors';
+
 
 const app = express();
 
 app.use(express.json());
+
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
 
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok' });
